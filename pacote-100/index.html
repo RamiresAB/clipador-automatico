@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pacote 100 Clipes — clipes de lives no automático</title>
+<meta name="description" content="Ferramenta que grava lives, acha os melhores momentos, edita em vertical com legenda e posta nas suas redes. Guia em PDF + arquivo para a sua IA.">
+<style>
+:root{--verde:#ff2d95;--menta:#ffd23f;--escuro:#10002a;--azul:#2b0a55;--cinza:#c9b8e0;--ok:#3ee8a9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--escuro);color:#eaf2f8;line-height:1.55}
+a{color:inherit}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.hero{background:linear-gradient(165deg,#10002a 0%,#2b0a55 55%,#8a1c6e 120%);padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-140px;bottom:-200px;background:linear-gradient(180deg,#ffd23f,#ff7a3c 45%,#ff2d95);opacity:.85}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:repeating-linear-gradient(90deg,#ff2d9533 0 2px,transparent 2px 70px),repeating-linear-gradient(0deg,#ff2d9533 0 2px,transparent 2px 40px)}
+.hero .w{position:relative;z-index:2}
+.tag{display:inline-block;background:var(--verde);box-shadow:0 0 26px #ff2d95aa;padding:6px 16px;border-radius:30px;font-weight:800;font-size:13px;letter-spacing:1.5px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.08;margin:18px 0;font-weight:900}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,#ffd23f,#ff7a3c 60%,#ff2d95);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(24px,4vw,34px);margin-bottom:22px;font-weight:800}
+.lead{font-size:clamp(17px,2.4vw,21px);color:#cfe0ec;max-width:640px}
+.btn{display:inline-block;background:var(--menta);color:#2b0a55;font-weight:900;font-size:19px;padding:17px 38px;border-radius:60px;text-decoration:none;box-shadow:0 10px 30px #ffd23f66;margin-top:26px}
+.btn:hover{filter:brightness(1.07)}
+.hero .row{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero .col{flex:1 1 380px}
+.phone{width:260px;height:460px;margin:0 auto;background:#000;border:7px solid #4a2a78;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 70px #000a}
+.phone>div{display:flex;align-items:center;justify-content:center;font-weight:900;text-align:center}
+.p1{flex:40;background:linear-gradient(160deg,#4a2a78,#2b1650);font-size:17px;padding-top:70px;position:relative}
+.p1 b{color:#ffe34d}.p1 small{position:absolute;bottom:6px;font-size:10px;opacity:.6;font-weight:600}
+.p2{flex:13;background:#0d0d12;font-size:14px}
+.p3{flex:34;background:linear-gradient(180deg,#ff7a3c,#ff2d95 50%,#2b0a55)}
+.alt{background:#1a0838}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:#24104a;border:1px solid #4a2a78;border-radius:14px;padding:22px}
+.card h3{color:var(--menta);font-size:18px;margin-bottom:6px}
+.card p{color:#c3d3e0;font-size:15px}
+.passos{counter-reset:p;list-style:none}
+.passos li{counter-increment:p;position:relative;padding:0 0 18px 54px;color:#cfe0ec}
+.passos li:before{content:counter(p);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-weight:900}
+.passos b{color:#fff}
+.oferta{background:linear-gradient(160deg,#2b0a55,#10002a);border:2px solid var(--menta);border-radius:22px;padding:36px 28px;text-align:center;max-width:560px;margin:0 auto}
+.preco{font-size:60px;font-weight:900;color:var(--menta);line-height:1}
+.preco small{font-size:20px;color:var(--cinza);font-weight:600}
+.oferta ul{list-style:none;text-align:left;margin:22px auto;max-width:400px}
+.oferta li{padding:6px 0 6px 28px;position:relative}
+.oferta li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:900}
+details{background:#24104a;border:1px solid #4a2a78;border-radius:12px;padding:16px 18px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:10px;color:#c3d3e0;font-size:15px}
+.aviso{background:#2a1040;border:1px solid #ff2d95;border-radius:12px;padding:16px 18px;color:#f3e3ff;font-size:15px}
+footer{padding:30px 0 50px;color:var(--cinza);font-size:13px;text-align:center}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#10002aee;padding:10px 16px;text-align:center;display:none;z-index:9;border-top:1px solid #4a2a78}
+.sticky .btn{margin:0;padding:13px 30px;font-size:17px;width:100%;max-width:420px}
+@media(max-width:700px){.sticky{display:block}body{padding-bottom:70px}}
+</style></head><body>
+<section class="hero"><div class="w"><div class="row">
+<div class="col">
+<span class="tag">🔥 HYPE DO GTA VI</span>
+<h1>100 clipes de GTA VI <em>prontos para postar.</em></h1>
+<p class="lead">Todo mês você recebe os <b>100 melhores clipes novos</b>: vertical 9:16, com legenda e título, música já removida. Baixou, escolheu, postou nas <b>suas</b> redes. Sem abrir editor.</p>
+<a class="btn buy" href="#oferta">Quero os 100 clipes →</a>
+</div>
+<div class="col"><div class="phone"><div class="p1">NÃO <b>&nbsp;ACREDITO</b><small>@seucanal</small></div><div class="p2">NINGUÉM ESPERAVA ISSO</div><div class="p3"></div></div></div>
+</div></div></section>
+<section><div class="w">
+<h2>Todo mundo postando GTA VI. <em>E o seu perfil?</em></h2>
+<div class="grid">
+<div class="card"><h3>🎬 100 clipes por mês</h3><p>Os melhores momentos das lives, escolhidos e editados. Um pacote novo a cada mês, no mesmo link.</p></div>
+<div class="card"><h3>📱 Formato pronto</h3><p>9:16 com câmera do streamer em cima, título no meio, gameplay embaixo e legenda animada.</p></div>
+<div class="card"><h3>🎵 Sem música com direitos</h3><p>Clipes com música protegida ficam de fora, para reduzir o risco de bloqueio.</p></div>
+<div class="card"><h3>📝 Títulos sugeridos</h3><p>Planilha com o número, o canal e um título para cada clipe. É só copiar.</p></div>
+<div class="card"><h3>📅 Calendário de postagem</h3><p>Guia em PDF com ritmos de 1, 3 ou 5 posts por dia e modelo de legenda e hashtags.</p></div>
+<div class="card"><h3>⏱️ Pronto em 1 minuto</h3><p>Receba o link por e-mail, baixe a pasta e comece a postar.</p></div>
+</div></div></section>
+<section class="alt" id="oferta"><div class="w">
+<div class="oferta">
+<span class="tag">ASSINATURA MENSAL</span>
+<h2 style="margin:16px 0 8px">Pacote 100 Clipes</h2>
+<div class="preco"><small>R$</small> 29,90<small> por mês</small></div>
+<ul>
+<li>100 clipes novos todo mês</li>
+<li>Planilha de títulos sugeridos</li>
+<li>Guia + calendário de postagem</li>
+<li>Uso nas suas próprias redes</li>
+<li>Cancele quando quiser</li>
+</ul>
+<a class="btn buy" href="#oferta" rel="noopener">Assinar agora →</a>
+<p style="font-size:13px;color:var(--cinza);margin-top:14px">Cobrança mensal de R$ 29,90, renovada todo mês até você cancelar. Pagamento seguro pela InfinityPay. Direito de arrependimento em até 7 dias, conforme o Código de Defesa do Consumidor.</p>
+</div></div></section>
+<section><div class="w">
+<h2>Antes de assinar, <em>leia com atenção</em></h2>
+<div class="aviso"><b>Direitos autorais:</b> os clipes são de streamers que autorizaram o uso. Mantenha os créditos do vídeo, poste só nas suas redes e não revenda nem compartilhe o pacote. Se um streamer pedir a retirada de um clipe, você deve remover. <b>Sem promessa de resultado:</b> visualizações, seguidores e ganhos variam e dependem de você.</div>
+</div></section>
+<section class="alt"><div class="w">
+<h2>Perguntas frequentes</h2>
+<details><summary>Como recebo os clipes?</summary><p>Após a confirmação do pagamento, você recebe por e-mail o link da pasta com os 100 clipes, o guia e a planilha. A entrega é feita em até 6 horas.</p></details>
+<details><summary>O pacote muda todo mês?</summary><p>Sim. A cada mês entram 100 clipes novos, escolhidos entre os melhores do período, enquanto a assinatura estiver ativa.</p></details>
+<details><summary>Os clipes têm marca d'água?</summary><p>Os vídeos trazem os créditos do streamer e a marca do criador do pacote. Não remova os créditos.</p></details>
+<details><summary>Posso postar em qualquer rede?</summary><p>Sim: YouTube Shorts, Instagram Reels, TikTok e Facebook, no seu perfil.</p></details>
+<details><summary>Como cancelo?</summary><p>Você cancela a assinatura quando quiser, pelo e-mail da cobrança da InfinityPay ou falando com a gente. Não há multa.</p></details>
+<details><summary>Posso revender os clipes?</summary><p>Não. O uso é pessoal, nas suas redes. É proibido revender ou redistribuir o pacote.</p></details>
+</div></section>
+<footer><div class="w">Pacote 100 Clipes · Uso pessoal do assinante, proibida a redistribuição. · Este produto não é afiliado nem endossado por Rockstar Games, Take-Two, Twitch, YouTube, Kick, TikTok ou Meta. GTA VI é marca de seus respectivos donos.</div></footer>
+<div class="sticky"><a class="btn buy" href="#oferta">Assinar — R$ 29,90/mês</a></div>
+<script>
+// ÚNICO lugar para trocar o link de pagamento (plano mensal da InfinityPay).
+var LINK_PAGAMENTO = "https://invoice.infinitepay.io/plans/ramiresab/ilgNfaU1wo";
+document.querySelectorAll('.buy').forEach(function(a){
+  if(LINK_PAGAMENTO && a.getAttribute('href') !== '#oferta' || (LINK_PAGAMENTO && a.closest('.oferta'))){ a.href = LINK_PAGAMENTO; }
+});
+</script>
+</body></html>
