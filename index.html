@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clipador Automático — cortes de lives no automático</title>
+<meta name="description" content="Ferramenta que grava lives, acha os melhores momentos, edita em vertical com legenda e posta nas suas redes. Guia em PDF + arquivo para a sua IA.">
+<style>
+:root{--verde:#0f9d6b;--menta:#3ee8a9;--escuro:#0d1b2a;--azul:#12324a;--cinza:#9fb0c0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--escuro);color:#eaf2f8;line-height:1.55}
+a{color:inherit}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.hero{background:radial-gradient(circle at 80% 0%,#14507a,#0d1b2a 60%);padding:64px 0 56px}
+.tag{display:inline-block;background:var(--verde);padding:6px 16px;border-radius:30px;font-weight:800;font-size:13px;letter-spacing:1.5px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.08;margin:18px 0;font-weight:900}
+h1 em,h2 em{font-style:normal;color:var(--menta)}
+h2{font-size:clamp(24px,4vw,34px);margin-bottom:22px;font-weight:800}
+.lead{font-size:clamp(17px,2.4vw,21px);color:#cfe0ec;max-width:640px}
+.btn{display:inline-block;background:var(--menta);color:#06231a;font-weight:900;font-size:19px;padding:17px 38px;border-radius:60px;text-decoration:none;box-shadow:0 10px 30px #0f9d6b66;margin-top:26px}
+.btn:hover{filter:brightness(1.07)}
+.hero .row{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero .col{flex:1 1 380px}
+.phone{width:260px;height:460px;margin:0 auto;background:#000;border:7px solid #243447;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 70px #000a}
+.phone>div{display:flex;align-items:center;justify-content:center;font-weight:900;text-align:center}
+.p1{flex:40;background:linear-gradient(160deg,#27425e,#1b2f45);font-size:17px;padding-top:70px;position:relative}
+.p1 b{color:#ffe34d}.p1 small{position:absolute;bottom:6px;font-size:10px;opacity:.6;font-weight:600}
+.p2{flex:13;background:#0d0d12;font-size:14px}
+.p3{flex:34;background:linear-gradient(180deg,#22392f,#101e18)}
+.alt{background:#0a1522}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:#10243a;border:1px solid #1d3a56;border-radius:14px;padding:22px}
+.card h3{color:var(--menta);font-size:18px;margin-bottom:6px}
+.card p{color:#c3d3e0;font-size:15px}
+.passos{counter-reset:p;list-style:none}
+.passos li{counter-increment:p;position:relative;padding:0 0 18px 54px;color:#cfe0ec}
+.passos li:before{content:counter(p);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--verde);display:flex;align-items:center;justify-content:center;font-weight:900}
+.passos b{color:#fff}
+.oferta{background:linear-gradient(160deg,#12324a,#0d1b2a);border:2px solid var(--menta);border-radius:22px;padding:36px 28px;text-align:center;max-width:560px;margin:0 auto}
+.preco{font-size:60px;font-weight:900;color:var(--menta);line-height:1}
+.preco small{font-size:20px;color:var(--cinza);font-weight:600}
+.oferta ul{list-style:none;text-align:left;margin:22px auto;max-width:400px}
+.oferta li{padding:6px 0 6px 28px;position:relative}
+.oferta li:before{content:"✓";position:absolute;left:0;color:var(--menta);font-weight:900}
+details{background:#10243a;border:1px solid #1d3a56;border-radius:12px;padding:16px 18px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:10px;color:#c3d3e0;font-size:15px}
+.aviso{background:#1d2b12;border:1px solid #5b7d2a;border-radius:12px;padding:16px 18px;color:#e5f2c9;font-size:15px}
+footer{padding:30px 0 50px;color:var(--cinza);font-size:13px;text-align:center}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#0d1b2aee;padding:10px 16px;text-align:center;display:none;z-index:9;border-top:1px solid #1d3a56}
+.sticky .btn{margin:0;padding:13px 30px;font-size:17px;width:100%;max-width:420px}
+@media(max-width:700px){.sticky{display:block}body{padding-bottom:70px}}
+</style></head><body>
+
+<section class="hero"><div class="w"><div class="row">
+<div class="col">
+<span class="tag">CLIPES NO AUTOMÁTICO</span>
+<h1>Transforme <em>lives</em> em clipes prontos para postar</h1>
+<p class="lead">O Clipador grava a live, acha os melhores momentos, edita em vertical com legenda animada e posta nas <b>suas</b> redes. Você recebe a ferramenta, um guia passo a passo e um arquivo para a sua IA (Claude ou ChatGPT) te guiar na instalação.</p>
+<a class="btn buy" href="#oferta">Quero o Clipador →</a>
+</div>
+<div class="col"><div class="phone"><div class="p1">ELE NÃO <b>&nbsp;ESPERAVA</b><small>@seucanal</small></div><div class="p2">ELE NÃO ESPERAVA ISSO</div><div class="p3"></div></div></div>
+</div></div></section>
+
+<section><div class="w">
+<h2>O que ele faz <em>por você</em></h2>
+<div class="grid">
+<div class="card"><h3>1. Grava a live</h3><p>Twitch, YouTube Live e Kick. Fica rodando no seu computador e guarda as gravações temporárias.</p></div>
+<div class="card"><h3>2. Detecta os melhores momentos</h3><p>Combina picos de volume e de chat para achar o que realmente aconteceu de bom, sem você assistir horas.</p></div>
+<div class="card"><h3>3. Edita em vertical</h3><p>9:16 com câmera do streamer em cima, título, gameplay embaixo, legenda animada e crédito.</p></div>
+<div class="card"><h3>4. Confere a música</h3><p>Reconhece música com direitos autorais e não posta o clipe, para evitar bloqueios.</p></div>
+<div class="card"><h3>5. Posta nas suas redes</h3><p>YouTube Shorts, Instagram Reels, Página do Facebook e TikTok. Você liga os seus próprios perfis.</p></div>
+<div class="card"><h3>6. Custo zero de ferramentas</h3><p>Funciona sem API paga: títulos por modelos prontos e filtros locais.</p></div>
+</div></div></section>
+
+<section class="alt"><div class="w">
+<h2>O que você <em>recebe</em></h2>
+<div class="grid">
+<div class="card"><h3>📘 Guia em PDF</h3><p>Instalação, configuração e conexão de cada rede em ordem, com solução dos erros mais comuns.</p></div>
+<div class="card"><h3>💻 Código completo</h3><p>A pasta pronta para configurar. Você coloca o seu @, os seus streamers e as suas contas.</p></div>
+<div class="card"><h3>🤖 Prompt Mestre para a sua IA</h3><p>Envie para o Claude ou ChatGPT. Ela lê, faz as perguntas certas e te guia etapa por etapa.</p></div>
+</div></div></section>
+
+<section><div class="w">
+<h2>Como começar <em>(em 4 passos)</em></h2>
+<ol class="passos">
+<li><b>Compre e baixe o pacote.</b> O acesso chega logo após a confirmação do pagamento.</li>
+<li><b>Envie o Prompt Mestre e a pasta para a sua IA</b> e peça para te guiar.</li>
+<li><b>Coloque as suas informações:</b> seu @, o jogo, os streamers que autorizaram e as suas redes.</li>
+<li><b>Teste, revise os primeiros clipes</b> e só então deixe no automático.</li>
+</ol>
+</div></section>
+
+<section class="alt" id="oferta"><div class="w">
+<div class="oferta">
+<span class="tag">OFERTA</span>
+<h2 style="margin:16px 0 8px">Clipador Automático</h2>
+<div class="preco"><small>R$</small> 97<small> por ano</small></div>
+<ul>
+<li>Guia passo a passo em PDF</li>
+<li>Código completo do Clipador</li>
+<li>Prompt Mestre para Claude ou ChatGPT</li>
+<li>Uso nas suas próprias redes</li>
+<li>Acesso por 1 ano (plano anual)</li>
+</ul>
+<a class="btn buy" href="https://invoice.infinitepay.io/plans/ramiresab/CcWzgjoWz9" rel="noopener">Comprar agora →</a>
+<p style="font-size:13px;color:var(--cinza);margin-top:14px">Plano anual de R$ 97, cobrado uma vez por ano e renovado a cada 12 meses até você cancelar. Pagamento seguro pela InfinityPay. Direito de arrependimento em até 7 dias, conforme o Código de Defesa do Consumidor.</p>
+</div></div></section>
+
+<section><div class="w">
+<h2>Antes de comprar, <em>leia com atenção</em></h2>
+<div class="aviso"><b>Direitos autorais:</b> use apenas conteúdo de streamers e canais que <b>autorizaram</b> os cortes, e sempre dê crédito. A responsabilidade pelo que você publica é sua. <b>Sem promessa de resultado:</b> visualizações, seguidores e ganhos dependem do seu conteúdo, da regularidade e das regras de cada plataforma. Algumas redes (como o TikTok) exigem aprovação do aplicativo para postagem automática; o guia explica as alternativas.</div>
+</div></section>
+
+<section class="alt"><div class="w">
+<h2>Perguntas frequentes</h2>
+<details><summary>Preciso saber programar?</summary><p>Não. O guia é passo a passo e o Prompt Mestre faz a sua IA te guiar. Você vai copiar e colar alguns comandos.</p></details>
+<details><summary>Funciona no meu computador?</summary><p>Windows 10/11 é o caminho principal. Placa NVIDIA deixa tudo mais rápido, mas não é obrigatória. Mac e Linux funcionam com ajustes que a sua IA ajuda a fazer.</p></details>
+<details><summary>Tem mensalidade ou custo de API?</summary><p>Não há mensalidade: o plano é anual (R$ 97 por ano) e o programa roda sem API paga. Existe uma opção de usar a IA da Anthropic para títulos, mas ela é opcional e paga à parte.</p></details>
+<details><summary>Posso usar as minhas próprias redes?</summary><p>Sim, é assim que funciona: cada comprador liga os próprios perfis e usa a própria marca. Nada fica ligado ao autor do produto.</p></details>
+<details><summary>Posso cortar qualquer streamer?</summary><p>Somente quem autorizou o uso. Sem autorização você pode ter vídeos bloqueados ou denunciados.</p></details>
+<details><summary>Como recebo o produto?</summary><p>Após a confirmação do pagamento você recebe o acesso ao arquivo para download.</p></details>
+</div></section>
+
+<footer><div class="w">Clipador Automático · Uso pessoal do comprador, proibida a redistribuição. · Este produto não é afiliado nem endossado por Twitch, YouTube, Kick, TikTok, Meta ou qualquer desenvolvedora de jogos.</div></footer>
+
+<div class="sticky"><a class="btn buy" href="#oferta">Quero o Clipador — R$ 97/ano</a></div>
+
+<script>
+// ÚNICO lugar para trocar o link de pagamento: cole aqui o link da InfinityPay.
+var LINK_PAGAMENTO = "https://invoice.infinitepay.io/plans/ramiresab/CcWzgjoWz9";
+document.querySelectorAll('.buy').forEach(function(a){
+  if(LINK_PAGAMENTO && a.getAttribute('href') !== '#oferta'){ a.href = LINK_PAGAMENTO; }
+});
+</script>
+</body></html>
